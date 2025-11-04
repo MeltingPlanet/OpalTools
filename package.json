@@ -11,8 +11,7 @@
     "format": "prettier --write \"src/**/*.{ts,js,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,js,json}\"",
     "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts --fix",
-    "postinstall": "npm run build"
+    "lint:fix": "eslint src/**/*.ts --fix"
   },
   "dependencies": {
     "@optimizely-opal/opal-tools-sdk": "^0.1.0-dev",
