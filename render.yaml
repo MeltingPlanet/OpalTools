@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: opal-tools
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: API_UID
+        sync: false
+      - key: API_KEY
+        sync: false
