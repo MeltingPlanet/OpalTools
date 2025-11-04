@@ -3,8 +3,10 @@ services:
     name: opal-tools
     env: node
     plan: free
+    region: frankfurt
     buildCommand: npm ci && npm run build
     startCommand: npm start
+    healthCheckPath: /discovery
     envVars:
       - key: NODE_ENV
         value: production
