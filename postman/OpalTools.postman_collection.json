@@ -1,0 +1,167 @@
+{
+  "info": {
+    "_postman_id": "e1da9012-c4ac-47c6-802b-c6a4f46810ad",
+    "name": "Opal Tools API",
+    "description": "Auto-generated Postman collection for Opal Tools service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Tool Discovery",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://{{base_url}}:{{port}}/discovery",
+          "protocol": "http",
+          "host": [
+            "{{base_url}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "discovery"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Address Details - Oslo Example",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"Karl Johans gate 1\",\n  \"countryCode\": \"NO\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{base_url}}:{{port}}/tools/address-details",
+          "protocol": "http",
+          "host": [
+            "{{base_url}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "tools",
+            "address-details"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Address Details - Sweden Example",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"Kungsgatan 1\",\n  \"countryCode\": \"SE\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{base_url}}:{{port}}/tools/address-details",
+          "protocol": "http",
+          "host": [
+            "{{base_url}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "tools",
+            "address-details"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Address Details - Error Case",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"Test address\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{base_url}}:{{port}}/tools/address-details",
+          "protocol": "http",
+          "host": [
+            "{{base_url}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "tools",
+            "address-details"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "localhost",
+      "type": "string"
+    },
+    {
+      "key": "port",
+      "value": "3000",
+      "type": "string"
+    }
+  ]
+}
