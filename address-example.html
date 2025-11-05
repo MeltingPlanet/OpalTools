@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Address Search Results</title>
+    <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
+
+      .results-count {
+        color: #6c757d;
+        font-size: 14px;
+      }
+
+      .address-list {
+        display: grid;
+        gap: 16px;
+      }
+
+      .address-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e9ecef;
+        transition: all 0.2s ease;
+      }
+
+      .address-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      .address-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 12px;
+      }
+
+      .address-street {
+        font-size: 18px;
+        font-weight: 600;
+        color: #2c3e50;
+        margin: 0;
+      }
+
+      .postal-code {
+        background: #e3f2fd;
+        color: #1565c0;
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .address-location {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .location-icon {
+        width: 16px;
+        height: 16px;
+        fill: #6c757d;
+      }
+
+      .city-municipality {
+        color: #495057;
+        font-size: 14px;
+      }
+
+      .coordinates {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Monaco', 'Menlo', monospace;
+        font-size: 12px;
+        color: #6c757d;
+        background: #f8f9fa;
+        padding: 8px 12px;
+        border-radius: 6px;
+      }
+
+      .coordinates a {
+        color: #0066cc;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.2s ease;
+      }
+
+      .coordinates a:hover {
+        color: #0052a3;
+        text-decoration: underline;
+      }
+
+      .coordinate-icon {
+        width: 14px;
+        height: 14px;
+        fill: #6c757d;
+      }
+
+      .no-results {
+        text-align: center;
+        color: #6c757d;
+        padding: 40px;
+        background: white;
+        border-radius: 12px;
+        border: 2px dashed #dee2e6;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 16px;
+        }
+
+        .address-main {
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .postal-code {
+          align-self: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Address Search Results</h1>
+      <div class="results-count">5 addresses found</div>
+    </div>
+
+    <div class="address-list">
+      <div class="address-card">
+        <div class="address-main">
+          <h3 class="address-street">Karl Johans gate 1</h3>
+          <span class="postal-code">0154</span>
+        </div>
+
+        <div class="address-location">
+          <svg class="location-icon" viewBox="0 0 24 24">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+            />
+          </svg>
+          <span class="city-municipality">Oslo</span>
+        </div>
+
+        <div class="coordinates">
+          <a
+            href="https://maps.google.com/maps?q=59.9139,10.7387"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Open in Google Maps"
+          >
+            <svg class="coordinate-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
+              />
+            </svg>
+            <span>59.9139, 10.7387</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="address-card">
+        <div class="address-main">
+          <h3 class="address-street">Stortingsgata 10</h3>
+          <span class="postal-code">0161</span>
+        </div>
+
+        <div class="address-location">
+          <svg class="location-icon" viewBox="0 0 24 24">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+            />
+          </svg>
+          <span class="city-municipality">Oslo</span>
+        </div>
+
+        <div class="coordinates">
+          <a
+            href="https://maps.google.com/maps?q=59.9127,10.7389"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Open in Google Maps"
+          >
+            <svg class="coordinate-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
+              />
+            </svg>
+            <span>59.9127, 10.7389</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="address-card">
+        <div class="address-main">
+          <h3 class="address-street">Grensen 15</h3>
+          <span class="postal-code">0159</span>
+        </div>
+
+        <div class="address-location">
+          <svg class="location-icon" viewBox="0 0 24 24">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+            />
+          </svg>
+          <span class="city-municipality">Oslo</span>
+        </div>
+
+        <div class="coordinates">
+          <a
+            href="https://maps.google.com/maps?q=59.9149,10.7401"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Open in Google Maps"
+          >
+            <svg class="coordinate-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
+              />
+            </svg>
+            <span>59.9149, 10.7401</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="address-card">
+        <div class="address-main">
+          <h3 class="address-street">Tollbugata 8</h3>
+          <span class="postal-code">0152</span>
+        </div>
+
+        <div class="address-location">
+          <svg class="location-icon" viewBox="0 0 24 24">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+            />
+          </svg>
+          <span class="city-municipality">Oslo</span>
+        </div>
+
+        <div class="coordinates">
+          <a
+            href="https://maps.google.com/maps?q=59.9112,10.7456"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Open in Google Maps"
+          >
+            <svg class="coordinate-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
+              />
+            </svg>
+            <span>59.9112, 10.7456</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="address-card">
+        <div class="address-main">
+          <h3 class="address-street">Youngstorget 2</h3>
+          <span class="postal-code">0181</span>
+        </div>
+
+        <div class="address-location">
+          <svg class="location-icon" viewBox="0 0 24 24">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+            />
+          </svg>
+          <span class="city-municipality">Oslo</span>
+        </div>
+
+        <div class="coordinates">
+          <a
+            href="https://maps.google.com/maps?q=59.9156,10.7522"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Open in Google Maps"
+          >
+            <svg class="coordinate-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
+              />
+            </svg>
+            <span>59.9156, 10.7522</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
